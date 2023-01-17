@@ -60,6 +60,36 @@
         transform: scale(0.9)
         bottom: 30px
 
+@media screen and (max-width: 1930px) and (max-height: 940px)
+  .bonus
+    &__firstWin,
+    &__secondWin
+      transform: scale(1.2)
+
+@media screen and (max-width: 1930px) and (max-height: 820px)
+  .bonus
+    &__firstWin,
+    &__secondWin
+      transform: scale(1.1)
+
+@media screen and (max-width: 1930px) and (max-height: 750px)
+  .bonus
+    &__firstWin,
+    &__secondWin
+      transform: scale(1)
+
+@media screen and (max-width: 1930px) and (max-height: 670px)
+  .bonus
+    &__firstWin,
+    &__secondWin
+      transform: scale(.9)
+
+@media screen and (max-width: 1930px) and (max-height: 590px)
+  .bonus
+    &__firstWin,
+    &__secondWin
+      transform: scale(.8)
+
 @media screen and (max-width: 1700px)
   .bonus
     &__main
@@ -403,6 +433,10 @@
 
 @media screen and (max-width: 860px) and (orientation: portrait)
   .bonus
+    &__firstWin,
+    &__secondWin
+      transform: scale(1.1)
+
     &__legal
       font-size: 4.7vw
       line-height: 45px
@@ -415,6 +449,9 @@
         &-top
           font-size: 52px
           line-height: 57px
+          span:last-child
+            &::after
+              bottom: 20px
         &-center
           font-size: 34px
           line-height: 34px
@@ -477,6 +514,9 @@
 
 @media screen and (max-width: 600px) and (orientation: portrait)
   .bonus
+    &__firstWin,
+    &__secondWin
+      transform: scale(1)
     &__music
       right: 15px
       bottom: 100px
@@ -634,6 +674,12 @@
         transform: translateX(-50%) scale(0.4)
         bottom: 85px
 
+@media screen and (max-width: 365px) and (orientation: portrait)
+  .bonus
+    &__firstWin,
+    &__secondWin
+      transform: scale(.8)
+
 @media screen and (max-width: 340px) and (orientation: portrait)
   .bonus
     &__footer
@@ -696,7 +742,7 @@
         left: 115px
         top: -67px
       &-wrapper
-        transform: scale(0.35)
+        transform: scale(0.4)
         bottom: 300px
     &__footer
       bottom: 0
@@ -710,9 +756,98 @@
         transform-origin: right center
         transform: scale(0.8)
 
+@media screen and (max-width: 920px) and (max-height: 400px)
+  .bonus
+    &__firstWin,
+    &__secondWin
+      transform: scale(.7)
+    &__main
+      &-wrapper
+        transform: scale(.35)
+        bottom: 320px
+
+@media screen and (max-width: 920px) and (max-height: 360px)
+  .bonus
+    &__firstWin,
+    &__secondWin
+      transform: scale(.6)
+    &__main
+      &-wrapper
+        transform: scale(.3)
+        bottom: 350px
+      &-txt
+        transform: scale(0.5)
+
+@media screen and (max-width: 920px) and (max-height: 325px)
+  .bonus
+    &__main
+      &-wrapper
+        transform: scale(.27)
+        bottom: 360px
+      &-txt
+        transform: scale(0.47)
+
+@media screen and (max-width: 920px) and (max-height: 305px)
+  .bonus
+    &__firstWin,
+    &__secondWin
+      transform: scale(.5)
+    &__main
+      &-wrapper
+        transform: scale(.25)
+        bottom: 375px
+      &-txt
+        transform: scale(0.42)
+
 @media screen and (max-width: 765px) and (orientation: landscape)
   .land
     &__footer
       &-text
         font-size: 8px
         line-height: 14px
+
+@media screen and (max-width: 750px) and (orientation: landscape)
+  .bonus
+    &__main
+      &-txt
+        margin: 0 -13px 0 -70px
+
+@media screen and (max-width: 720px) and (orientation: landscape)
+  .bonus
+    &__main
+      &-txt
+        margin: 0 -53px 0 -70px
+
+@media screen and (max-width: 636px) and (orientation: landscape)
+  .bonus
+    &__footer
+      &-text
+        font-size: 6px
+        line-height: 13px
+
+@media screen and (max-width: 600px) and (orientation: landscape) and (max-height: 380px)
+  .bonus
+    &__main
+      &-txt
+        margin: 0 -123px 0 -10px
+      &-wrapper
+        transform: scale(0.32)
+      &-txt
+        transform: scale(0.5)
+
+@media screen and (max-width: 600px) and (orientation: landscape) and (max-height: 365px)
+  .bonus
+    &__main
+      &-wrapper
+        transform: scale(0.28)
+      &-txt
+        transform: scale(0.47)
+
+@media screen and (max-width: 600px) and (orientation: landscape) and (max-height: 330px)
+  .bonus
+    &__main
+      &-wrapper
+        transform: scale(0.25)
+        bottom: 355px
+      &-txt
+        transform: scale(0.42)

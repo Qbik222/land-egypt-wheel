@@ -51,10 +51,11 @@ body
     left: 0
     right: 0
     z-index: 10
-    transition: opacity .7s linear, visibility .5s linear
+    transition: opacity 1s linear, visibility .5s linear
   &__firstWin,
   &__secondWin
     width: 340px
+    min-width: 340px
     height: 435px
     background: url('../img/popup-bg.png') no-repeat 50% 0/contain
     transform: scale(1.4)
@@ -92,6 +93,7 @@ body
         font-family: $font-suisse-semb
         color: $magenta
     &-btn
+      cursor: pointer
       font-family: $font-suisse-semb
       padding: 19px 15px 17px
       text-align: center
