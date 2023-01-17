@@ -2,83 +2,60 @@
   .bonus__overlay.opacity-overlay
     .bonus__firstWin.hide
       .bonus__firstWin-info
-        .bonus__firstWin-image
-          .bonus__firstWin-image-wrap
-            img(src='img/sam2-mob.png' alt='sam').bonus__firstWin-image-sam
-            .bonus__firstWin-image-txt Felicitări, ai câștigat Bonus 100% până la 1000 Lei la prima depunere.
-        .bonus__firstWin-salut
-          .bonus__firstWin-salut-one
-          .bonus__firstWin-salut-two
-          .bonus__firstWin-salut-three
-          .bonus__firstWin-salut-fourth
-          .bonus__firstWin-salut-five
-        .bonus__firstWin-prize
-          .bonus__firstWin-txt Ai câștigat
-          .bonus__firstWin-win Bonus 100% #[br] până la 1000 Lei
-        .bonus__firstWin-btn
-          span Mai învârte
-        .bonus__firstWin-foot Mai ai o încercare
+        .bonus__firstWin-title Вітаємо, ти виграв можливість отримати фріспіни!
+        .bonus__firstWin-win 100 FS
+        .bonus__firstWin-text Залишилась ще #[span 1] спроба
+        .bonus__firstWin-btn Крути ще
+
     .bonus__secondWin.hide
       .bonus__secondWin-info
-        .bonus__secondWin-image
-          .bonus__secondWin-image-wrap
-            img(src='img/sam2-mob.png' alt='sam').bonus__secondWin-image-sam
-            .bonus__secondWin-image-txt Înregistrează-te, pentru a primi Bonusul de Bun Venit!
-        .bonus__secondWin-salut
-          .bonus__secondWin-salut-one
-          .bonus__secondWin-salut-two
-          .bonus__secondWin-salut-three
-          .bonus__secondWin-salut-fourth
-          .bonus__secondWin-salut-five
-        .bonus__secondWin-prize
-          .bonus__secondWin-txt Ai câștigat
-          .bonus__secondWin-win2 pariu fara risc 100 lei #[br] #[span +] #[br] 100 rotiri gratuite
-        a(href="https://www.favbet.ro/ro/register/").bonus__secondWin-btn
-          span Acceptă Bonusul
+        .bonus__secondWin-title Вітаємо, ти виграв можливість отримати фріспіни!
+        .bonus__secondWin-win 4500₴ #[br] 100 FS
+        .bonus__secondWin-text Реєструйся, щоб отримати можливість забрати бонус
+        a(href='#').bonus__secondWin-btn Забирай бонус
+        a(href='#').bonus__secondWin-more Детальніше про умови Акції “Вітальній бонус”
+
   .bonus__main
     .bonus__main-logo
-    .bonus__main-txt Învârte roata -#[br] câștigă #[span un #[span bonus] #[br] de bun venit]
+    .bonus__main-buttons
+      a(href='#').bonus__main-buttons-left Вхід
+      a(href='#').bonus__main-buttons-right Реєстрація
+    .bonus__main-txt
+      .bonus__main-txt-top Крути колесо – #[br] забирай #[span бонуси]
+      .bonus__main-txt-center У тебе #[span 2] спроби
+      .bonus__main-txt-bottom * Про умови Акції “Вітальній бонус” можеш дізнатись на сайті <a href="#">favbet.ua</a>. Період з Акції з 04.02.2022 року по 31.12.2022 року. #[br] Бонус доступний тільки для нових клієнтів
     .bonus__main-wrapper
-      .bonus__main-man
-        .bonus__main-man-txt Hei bună, eu sunt Coala Sam
-        picture
-          source(media="(min-width: 551px) and (orientation: landscape) and (min-height: 500px)" srcset="img/sam1-desc.png")
-          source(media="(min-width: 551px) and (max-width: 1024px) and (orientation: portrait)" srcset="img/sam1-tab.png")
-          source(media="(max-width: 550px) and (orientation: portrait)" srcset="img/sam1-mob.png")
-          source(media="(max-width: 920px) and (orientation: landscape) and (max-height: 450px)" srcset="img/sam1-mob.png")
-          img(src="img/sam1-desc.png" alt="Favbet")
-      .bonus__main-man2
-        .bonus__main-man2-txt Vrei un Bonus? Mai ai o încercare.
-        picture
-          source(media="(min-width: 551px) and (orientation: landscape) and (min-height: 500px)" srcset="img/sam2-desc.png")
-          source(media="(min-width: 551px) and (max-width: 1024px) and (orientation: portrait)" srcset="img/sam2-tab.png")
-          source(media="(max-width: 550px) and (orientation: portrait)" srcset="img/sam2-mob.png")
-          source(media="(max-width: 920px) and (orientation: landscape) and (max-height: 450px)" srcset="img/sam2-mob.png")
-          img(src="img/sam2-desc.png" alt="Favbet")
       .bonus__main-wheel
         .bonus__main-wheel-wrap
-          .bonus__main-wheel-arrow.position
           .bonus__main-wheel-btn-bottom.position
           .bonus__main-wheel-btn.position.pulse-btn
-          .bonus__main-wheel-bulbs.position
           .bonus__main-wheel-frame
           .bonus__main-wheel-reel.position
           .bonus__main-wheel-light.position
-          .bonus__main-wheel-bottom.position
     .bonus__footer
-      .bonus__footer-copy
-        img(src='img/footer-copy.svg' alt='copyright')
-      .bonus__footer-text L1200662W001197. #[br] Se aplică T&C
+      .bonus__footer-row
+        .bonus__footer-text Ліцензія на провадження діяльності з організації та проведення азартних ігор казино в мережі Інтернет від 20.04.2021 року, видана ТОВ «БК «ФАВБЕТ» на підставі Рішення КРАІЛ від 05.04.2021 року за №137 із змінами та Ліцензія на провадження діяльності з організації та проведення букмекерської діяльності від 28.12.2022 року, видана ТОВ «БК «ФАВБЕТ» на підставі Рішення КРАІЛ від 13.12.2022 року за № 433
+        .bonus__footer-info
+          .bonus__footer-info-licensed
+            img(src='img/21+.svg' alt='21+').bonus__footer-info-licensed-one.bonus__footer-info-licensed-img
+            img(src='img/applePay.svg' alt='applePay').bonus__footer-info-licensed-two.bonus__footer-info-licensed-img
+            img(src='img/googlePay.svg' alt='googlePay').bonus__footer-info-licensed-three.bonus__footer-info-licensed-img
+            img(src='img/visa.svg' alt='visa').bonus__footer-info-licensed-fourth.bonus__footer-info-licensed-img
+            img(src='img/mastercard.svg' alt='mastercard').bonus__footer-info-licensed-five.bonus__footer-info-licensed-img
+          .bonus__footer-info-buttons
+            a(href='https://apps.apple.com/ua/app/favbet-ua/id1580749519' aria-label='link-appStore' target="_blank").bonus__footer-info-buttons-apple
+              img(src='img/appleBtn.png' alt='apple-store')
+            a(href='https://favbet.ua/minio/android-files/FavbetUA.apk' aria-label='link-googleStore' target="_blank").bonus__footer-info-buttons-google
+              img(src='img/googleBtn.svg' alt='google-store')
+
     .bonus__music
       img(src='img/music-off.svg' alt='sounds')
-    .bonus__salut
-      .bonus__salut-one
-      .bonus__salut-two
-      .bonus__salut-three
-      .bonus__salut-fourth
+.bonus__legal УЧАСТЬ В АЗАРТНИХ ІГРАХ МОЖЕ ВИКЛИКАТИ ІГРОВУ ЗАЛЕЖНІСТЬ. ДОТРИМУЙТЕСЯ ПРАВИЛ (ПРИНЦИПІВ) ВІДПОВІДАЛЬНОЇ ГРИ
+.bonus__legal-desc
+  .bonus__legal-desc-wrap
   audio(src='sounds/main-music.mp3' loop).audio
   audio(src='sounds/wheel-music.mp3' ).audio-wheel
-  audio(src='sounds/firework-music.mp3' loop).audio-fireworks
-  audio(src='sounds/coints-music.wav' ).audio-coin
+  audio(src='sounds/popup.mp3' ).audio-coin
+
 
 
