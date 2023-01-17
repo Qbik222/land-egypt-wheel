@@ -1,0 +1,718 @@
+$blue: #000055
+$magenta: #ff267e
+$green: #05C489
+$green-hover: #09B47F
+$grey: #EDEDED
+$text: #292929
+
+$font-suisse-reg: SuisseIntl-Regular, sans-serif //400
+$font-suisse-bold: SuisseIntl-Bold, sans-serif
+$font-suisse-med: SuisseIntl-Medium, sans-serif
+$font-suisse-semb: SuisseIntl-SemiBold, sans-serif // 600
+$font-rubik: Rubik, sans-serif
+$font-wulkan: Wulkan, sans-serif
+
+body
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
+  overscroll-behavior: none
+  img
+    max-width: 100%
+    height: auto
+
+.container
+  max-width: 700px
+  margin: auto
+
+.position
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  margin: auto
+
+.btn
+  font-family: $font-suisse-semb
+  font-size: 18px
+  color: $blue
+  text-transform: uppercase
+  letter-spacing: 0.07em
+  background: linear-gradient(1.54deg, #52B382 0.98%, #67DEA2 98.36%)
+  border-radius: 4px
+  transition: background .3s linear
+  &:hover
+    background: linear-gradient(1.54deg, #67DEA2 0.98%, #52B382 98.36%)
+
+.bonus
+  width: 100%
+  height: 100%
+  overflow: hidden
+  position: relative
+  @media screen and (min-width: 700px) and (orientation: landscape) and (min-height: 451px)
+    background: #005 url('../img/bg-desc.jpg') no-repeat 50% 0/cover
+  @media screen and (min-width: 601px) and (max-width: 1024px) and (orientation: portrait)
+    background: #005  url('../img/bg-desc.jpg') no-repeat 50% 0/cover
+  @media screen and (max-width: 600px) and (orientation: portrait)
+    background: #005 url("../img/bg-mob.jpg") no-repeat 50% 0%/cover
+  @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
+    background: #005 url("../img/bg-landscape.jpg") no-repeat 50% 0/cover
+
+  &__overlay
+    &::before
+      content: ''
+      position: absolute
+      width: 100%
+      height: 100%
+      top: 0
+      left: 0
+      animation: 5s infinite bg-popUP ease
+      background: #005 url("../img/bg-popUp-desc.jpg") no-repeat 50% 0/cover
+      @media (max-width: 600px)
+        background: #005 url("../img/bg-popUp-mob.jpg") no-repeat 50% 0/cover
+    display: flex
+    justify-content: center
+    align-items: center
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    z-index: 10
+    transition: opacity .7s linear, visibility .5s linear
+  &__firstWin,
+  &__secondWin
+    &-salut
+      &-one
+        position: absolute
+        top: -95px
+        left: -130px
+        background: url("../img/salut1.svg") no-repeat 0 0/contain
+        width: 200px
+        height: 200px
+        opacity: 0
+        animation: 4s infinite salut ease
+        animation-delay: 0s
+        z-index: 0
+      &-two
+        position: absolute
+        top: -143px
+        left: 16px
+        background: url("../img/salut2.svg") no-repeat 0 0/contain
+        width: 140px
+        height: 140px
+        opacity: 0
+        animation: 4s infinite salut ease
+        animation-delay: 2s
+        z-index: 0
+      &-three
+        position: absolute
+        top: -95px
+        left: 208px
+        background: url("../img/salut3.svg") no-repeat 0 0/contain
+        width: 90px
+        height: 90px
+        opacity: 0
+        animation: 4s infinite salut ease
+        animation-delay: 1s
+        z-index: 0
+      &-fourth
+        position: absolute
+        top: -145px
+        right: -41px
+        background: url("../img/salut4.svg") no-repeat 0 0/contain
+        width: 150px
+        height: 150px
+        opacity: 0
+        animation: 4s infinite salut ease
+        animation-delay: 1.5s
+        z-index: 0
+      &-five
+        position: absolute
+        top: -13px
+        right: -90px
+        background: url("../img/salut2.svg") no-repeat 0 0/contain
+        width: 80px
+        height: 80px
+        opacity: 0
+        animation: 4s infinite salut ease
+        animation-delay: 2.5s
+        z-index: 0
+
+    &-info
+      display: flex
+      flex-direction: column
+      align-items: center
+      margin-top: 220px
+      transform: scale(1.3)
+      position: relative
+      z-index: 3
+    &-prize
+      width: 495px
+      height: 317px
+      background: url("../img/win-popUp.png") no-repeat 0 0/contain
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      position: relative
+      z-index: 2
+      &::after
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: url("../img/win-popUp-light.png") no-repeat 0 0/contain
+        opacity: 0
+        animation: 1.9s infinite bulbs-opacity ease-in-out
+      &::before
+        content: ''
+        position: absolute
+        width: 85px
+        height: 82px
+        top: 11px
+        z-index: 5
+        left: 50%
+        transform: translateX(-30%)
+        background: url("../img/fav-popup.png") no-repeat 0 0/contain
+    &-txt
+      margin-top: -30px
+      margin-left: 30px
+      font-family: $font-suisse-bold
+      font-size: 20px
+      line-height: 40px
+      color: $grey
+      letter-spacing: 0.03em
+      text-transform: uppercase
+    &-win
+      margin-left: 30px
+      font-family: $font-rubik
+      font-size: 60px
+      line-height: 50px
+      letter-spacing: 0.01em
+      text-transform: uppercase
+      color: $magenta
+      text-shadow: 0px 0px 15px rgba(255, 38, 126, 0.5), 0px 0px 14px #FF267E, 0px 2px 5px rgba(0, 0, 0, 0.3)
+    &-win2
+      font-family: $font-rubik
+      padding: 10px 0 0 25px
+      font-size: 27px
+      line-height: 14px
+      color: $magenta
+      text-transform: uppercase
+      text-align: center
+      white-space: nowrap
+      text-shadow: 0px 0px 15px rgba(255, 38, 126, 0.5), 0px 0px 14px #FF267E, 0px 2px 5px rgba(0, 0, 0, 0.3)
+      span
+        font-family: $font-rubik
+        font-size: 20px
+        line-height: 38px
+        color: $grey
+        letter-spacing: 0.03em
+        text-transform: uppercase
+    &-btn
+      display: inline-block
+      padding: 6px
+      border: 1px solid #38FFC2
+      box-shadow: 0px 0px 6px #05C489, 0px 4px 30px rgba(172, 255, 229, 0.6)
+      filter: drop-shadow(0px 0px 1px #05C489)
+      border-radius: 10px
+      margin: 0 0 20px 10px
+      cursor: pointer
+      &:hover span
+        background: #15d79f
+      span
+        font-family: $font-suisse-bold
+        display: inline-block
+        padding: 21px 56px 19px
+        font-size: 18px
+        line-height: 23px
+        color: $blue
+        letter-spacing: 0.08em
+        text-transform: uppercase
+        background: #05C489
+        box-shadow: 0 0 9px #05C489, 0 0px 9px rgba(172, 255, 229, 0.6)
+        border-radius: 6px
+        transition: background-color .3s ease
+    &-foot
+      font-family: $font-suisse-reg
+      font-size: 18px
+      line-height: 24px
+      letter-spacing: 0.03em
+      color: $grey
+      margin-left: 10px
+    &-image
+      position: absolute
+      top: -144px
+      left: 50%
+      transform: translateX(-50%)
+      z-index: 1
+      &-wrap
+        position: relative
+      &-sam
+        max-width: 210px
+      &-txt
+        background: url("../img/bubble-2.png") no-repeat 0% 0%/contain
+        width: 160px
+        height: 145px
+        font-family: $font-suisse-bold
+        padding: 23px 5px 10px 25px
+        font-size: 11px
+        line-height: 16px
+        letter-spacing: 0.03em
+        text-transform: uppercase
+        color: $blue
+        position: absolute
+        top: -50px
+        right: -160px
+  &__firstWin
+    &-win
+      font-size: 33px
+      line-height: 40px
+      text-align: center
+  &__secondWin
+    &-txt
+      margin-top: -40px
+    &-win
+      font-size: 33px
+      line-height: 39px
+      text-align:  center
+    &-image
+      &-txt
+        padding: 29px 23px 12px 25px
+  &__main
+    height: 100%
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: flex-end
+    &-logo
+      background: url("../img/logo.svg") no-repeat 0 0/contain
+      width: 460px
+      height: 154px
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 1
+    &-wrapper
+      position: relative
+      z-index: 2
+      width: 100%
+      display: flex
+      justify-content: center
+      align-items: flex-end
+    &-txt
+      font-family: $font-suisse-semb
+      font-size: 63px
+      line-height: 70px
+      color: $grey
+      text-transform: uppercase
+      letter-spacing: 0.03em
+      position: absolute
+      top: 190px
+      left: 190px
+      z-index: 4
+      span
+        span
+          color: $magenta
+          font-family: $font-wulkan
+          font-style: italic
+    &-wheel
+      width: 857px
+      height: 910px
+      position: relative
+      flex-shrink: 0
+      right: -340px
+      bottom: -9px
+      &::before
+        content: ''
+        position: absolute
+        width: 155px
+        height: 210px
+        background: url("../img/wheel-fav.png") no-repeat 0 0/contain
+        top: -90px
+        left: 51%
+        transform: translateX(-50%)
+        z-index: 4
+      &-wrap
+        position: relative
+        &::after
+          content: ''
+          position: absolute
+          top: 50%
+          left: 50%
+          transform: translate(-50%, -50%)
+          width: 430px
+          height: 430px
+          border-radius: 50%
+          z-index: 4
+          border: 2px solid rgba(255, 255, 255, 0.07)
+      &-arrow
+        background: url("../img/wheel-arrow.svg") no-repeat 0 0/contain
+        width: 82px
+        height: 87px
+        top: -170px
+        z-index: 4
+      &-btn
+        width: 150px
+        height: 150px
+        z-index: 5
+        top: -8px
+        cursor: pointer
+        transform: translateY(5px)
+        @media screen and (min-width: 551px) and (orientation: landscape) and (min-height: 500px)
+          background: url("../img/wheel-btn.png") no-repeat 0 0/contain
+        @media screen and (min-width: 551px) and (max-width: 1024px) and (orientation: portrait)
+          background: url("../img/wheel-btn.png") no-repeat 0 0/contain
+        @media screen and (max-width: 550px) and (orientation: portrait)
+          background: url("../img/wheel-btn-mob.png") no-repeat 0 0/contain
+        @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
+          background: url("../img/wheel-btn-mob.png") no-repeat 0 0/contain
+        &-bottom
+          width: 175px
+          height: 175px
+          border-radius: 50%
+          z-index: 3
+          background: radial-gradient(50% 50% at 50% 50%, #9EFFE1 0%, #05C486 99.99%, #05C489 100%)
+          box-shadow: 0px 0px 52px #1CFFB9, 0px 4px 176px #000000, inset 0px 0px 32px #76FFD5
+          &::before
+            content: ''
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            width: 186px
+            height: 186px
+            border-radius: 50%
+            border: 2px solid #05C489
+            filter: drop-shadow(0px 0px 9px #05C489) drop-shadow(0px 0px 9px #05C489)
+          &::after
+            content: ''
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            width: 299px
+            height: 299px
+            border-radius: 50%
+            border: 2px solid rgba(255, 255, 255, 0.16)
+      &-bulbs
+        width: 857px
+        height: 869px
+        top: -6px
+        z-index: 3
+        opacity: 0
+        transition: opacity .4s linear
+        animation: 1.8s infinite bulbs-opacity ease-in-out
+        @media screen and (min-width: 551px) and (orientation: landscape) and (min-height: 500px)
+          background: url("../img/wheel-bulbs.png") no-repeat 0 0/contain
+        @media screen and (min-width: 551px) and (max-width: 1024px) and (orientation: portrait)
+          background: url("../img/wheel-bulbs.png") no-repeat 0 0/contain
+        @media screen and (max-width: 550px) and (orientation: portrait)
+          background: url("../img/wheel-bulbs-mob.png") no-repeat 0 0/contain
+        @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
+          background: url("../img/wheel-bulbs-mob.png") no-repeat 0 0/contain
+      &-frame
+        width: 780px
+        height: 780px
+        position: relative
+        margin: auto
+        z-index: 2
+        @media screen and (min-width: 551px) and (orientation: landscape) and (min-height: 500px)
+          background: url("../img/wheel-frame.png") no-repeat 0 0/contain
+        @media screen and (min-width: 551px) and (max-width: 1024px) and (orientation: portrait)
+          background: url("../img/wheel-frame.png") no-repeat 0 0/contain
+        @media screen and (max-width: 550px) and (orientation: portrait)
+          background: url("../img/wheel-frame-mob.png") no-repeat 0 0/contain
+        @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
+          background: url("../img/wheel-frame-mob.png") no-repeat 0 0/contain
+      &-reel
+        width: 740px
+        height: 740px
+        top: 14px
+        bottom: auto
+        z-index: 2
+        filter: drop-shadow(0px 0px 250px rgba(255, 40, 127, 0.74))
+        @media screen and (min-width: 551px) and (orientation: landscape) and (min-height: 500px)
+          background: url("../img/wheel-reel.png") no-repeat 0 0/contain
+        @media screen and (min-width: 551px) and (max-width: 1024px) and (orientation: portrait)
+          background: url("../img/wheel-reel.png") no-repeat 0 0/contain
+        @media screen and (max-width: 550px) and (orientation: portrait)
+          background: url("../img/wheel-reel-mob.png") no-repeat 0 0/contain
+        @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
+          background: url("../img/wheel-reel-mob.png") no-repeat 0 0/contain
+        &._secondRotate
+          @media screen and (min-width: 551px) and (orientation: landscape) and (min-height: 500px)
+            background: url("../img/wheel-reel-2.png") no-repeat 0 0/contain
+          @media screen and (min-width: 551px) and (max-width: 1024px) and (orientation: portrait)
+            background: url("../img/wheel-reel-2.png") no-repeat 0 0/contain
+          @media screen and (max-width: 550px) and (orientation: portrait)
+            background: url("../img/wheel-reel-2-mob.png") no-repeat 0 0/contain
+          @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
+            background: url("../img/wheel-reel-2-mob.png") no-repeat 0 0/contain
+      &-light
+        width: 1395px
+        height: 1395px
+        left: 50%
+        margin-left: -698px
+        top: 0
+        z-index: 1
+        animation: 1.8s infinite lamps-light ease-in-out
+        @media screen and (min-width: 551px) and (orientation: landscape) and (min-height: 500px)
+          background: url("../img/wheel-light.png") no-repeat 50% 50%/contain
+        @media screen and (min-width: 551px) and (max-width: 1024px) and (orientation: portrait)
+          background: url("../img/wheel-light.png") no-repeat 50% 50%/contain
+        @media screen and (max-width: 550px) and (orientation: portrait)
+          background: url("../img/wheel-light-mob.png") no-repeat 50% 50%/contain
+        @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
+          background: url("../img/wheel-light-mob.png") no-repeat 50% 50%/contain
+      &-bottom
+        width: 857px
+        height: 180px
+        top: auto
+        bottom: -147px
+        @media screen and (min-width: 551px) and (orientation: landscape) and (min-height: 500px)
+          background: url("../img/wheel-bottom.png") no-repeat 0 0/contain
+        @media screen and (min-width: 551px) and (max-width: 1024px) and (orientation: portrait)
+          background: url("../img/wheel-bottom.png") no-repeat 0 0/contain
+        @media screen and (max-width: 550px) and (orientation: portrait)
+          background: url("../img/wheel-bottom-mob.png") no-repeat 0 0/contain
+        @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
+          background: url("../img/wheel-bottom-mob.png") no-repeat 0 0/contain
+    &-man2
+      pointer-events: none
+      position: relative
+      display: none
+      z-index: 3
+      &-txt
+        padding: 39px 18px 13px 27px
+        position: absolute
+        bottom: 46.5vh
+        left: 150px
+        transform: scale(1.2)
+        z-index: 5
+        width: 219px
+        height: 195px
+        background: url("../img/bubble-2.png") no-repeat 0 0/contain
+        font-family: $font-suisse-bold
+        font-size: 20px
+        line-height: 28px
+        color: $blue
+        letter-spacing: 0.03em
+        text-transform: uppercase
+        opacity: 0
+        animation: 3.5s bulbs-opacityEnd ease
+        animation-fill-mode: forwards
+      picture
+        height: 60vh
+        position: absolute
+        bottom: 0
+        left: -380px
+        z-index: 4
+        width: 800px
+        img
+          height: 100%
+    &-man
+      pointer-events: none
+      position: relative
+      z-index: 3
+      &-txt
+        padding: 45px 18px 13px 32px
+        position: absolute
+        bottom: 41.5vh
+        left: 150px
+        transform: scale(1.2)
+        z-index: 5
+        width: 219px
+        height: 195px
+        background: url("../img/bubble-2.png") no-repeat 0 0/contain
+        font-family: $font-suisse-bold
+        font-size: 20px
+        line-height: 28px
+        color: $blue
+        letter-spacing: 0.03em
+        text-transform: uppercase
+        opacity: 0
+        animation: 3.5s bulbs-opacityEnd ease
+        animation-fill-mode: forwards
+      picture
+        height: 57vh
+        position: absolute
+        bottom: 0
+        left: -360px
+        z-index: 4
+        width: 800px
+        img
+          height: 100%
+  &__footer
+    position: absolute
+    bottom: 40px
+    left: 60px
+    z-index: 4
+    display: flex
+    align-items: center
+    &-copy
+      max-width: 150px
+      margin: 0 25px 0 0
+    &-text
+      font-family: $font-suisse-reg
+      color: #e8e8e8
+      font-size: 14px
+      line-height: 18px
+      letter-spacing: 0.02em
+      text-align: left
+  &__music
+    width: 62px
+    height: 62px
+    background: linear-gradient(180deg, #DCF7FF 0%, #A4D8EC 100%)
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5)
+    border-radius: 50%
+    display: flex
+    align-items: center
+    justify-content: center
+    cursor: pointer
+    position: absolute
+    right: 60px
+    bottom: 50px
+    z-index: 5
+  &__salut
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    pointer-events: none
+    &-one
+      position: absolute
+      right: 62px
+      top: 218px
+      width: 150px
+      height: 150px
+      opacity: 0
+      background: url("../img/salut1.svg") no-repeat 50% 0/contain
+      animation: 4s infinite salut ease
+    &-two
+      position: absolute
+      top: 10px
+      right: 122px
+      width: 287px
+      height: 292px
+      background: url("../img/salut2.svg") no-repeat 50% 0/contain
+      opacity: 0
+      animation: 4s infinite salut ease
+      animation-delay: 1s
+    &-three
+      position: absolute
+      top: -2px
+      right: 919px
+      width: 190px
+      height: 190px
+      background: url("../img/salut3.svg") no-repeat 50% 0/contain
+      opacity: 0
+      animation: 4s infinite salut ease
+      animation-delay: 1.5s
+    &-fourth
+      position: absolute
+      top: 40px
+      right: 1008px
+      width: 240px
+      height: 240px
+      background: url("../img/salut4.svg") no-repeat 50% 0/contain
+      opacity: 0
+      animation: 4s infinite salut ease
+      animation-delay: 2s
+
+
+
+.audio
+  display: none
+.pulse-btn
+  animation: 1.8s infinite pulse-btn ease-in-out
+
+@keyframes pulse-btn
+  0%
+    transform: scale(1)
+    top: 0
+  50%
+    transform: scale(1.07)
+    top: 0
+  100%
+    transform: scale(1)
+    top: 0
+
+@keyframes bg-popUP
+  0%
+    transform: scale(1)
+  50%
+    transform: scale(1.11)
+  100%
+    transform: scale(1)
+
+@keyframes salut
+  0%
+    transform: scale(0)
+    opacity: 0
+  50%
+    transform: scale(1)
+    opacity: 1
+  100%
+    transform: scale(1)
+    opacity: 0
+
+@keyframes bulbs-opacity
+  0%
+    opacity: 0
+  50%
+    opacity: 1
+  100%
+    opacity: 0
+
+@keyframes bulbs-opacityEnd
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+
+
+@keyframes lamps-light
+  0%
+    transform: scale(1)
+  50%
+    transform: scale(1.1)
+  100%
+    transform: scale(1)
+
+.reel-rotation-first
+  animation: 6s reel-rotation-first cubic-bezier(.25,.75,.5,1.05) forwards
+
+@keyframes reel-rotation-first
+  0%
+    transform: rotate(0deg)
+  80%
+    transform: rotate(998deg)
+  90%
+    transform: rotate(986deg)
+  100%
+    transform: rotate(992deg)
+
+.reel-rotation-second
+  animation: 6s reel-rotation-second cubic-bezier(.25,.75,.5,1.05) forwards
+
+@keyframes reel-rotation-second
+  0%
+    transform: rotate(992deg)
+  80%
+    transform: rotate(1852deg)
+  90%
+    transform: rotate(1840deg)
+  100%
+    transform: rotate(1846deg)
+
+.hide
+  display: none
+
+.opacity-overlay
+  opacity: 0
+  visibility: hidden
