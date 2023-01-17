@@ -35,7 +35,7 @@ body
   @media screen and (min-width: 700px) and (orientation: landscape) and (min-height: 451px)
     background: #005 url('../img/bg-desc.jpg') no-repeat 50% 0/cover
   @media screen and (min-width: 601px) and (max-width: 1024px) and (orientation: portrait)
-    background: #005  url('../img/bg-desc.jpg') no-repeat 50% 0/cover
+    background: #005  url('../img/bg-tab.jpg') no-repeat 50% 0/cover
   @media screen and (max-width: 600px) and (orientation: portrait)
     background: #005 url("../img/bg-mob.jpg") no-repeat 50% 0%/cover
   @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
@@ -236,13 +236,14 @@ body
       &-top
         max-width: 430px
         font-family: $font-suisse-bold
+        white-space: nowrap
         font-size: 80px
         line-height: 87px
         text-transform: uppercase
         letter-spacing: 0.03em
         color: $grey
         margin: 0 0 32px 0
-        span
+        span:last-child
           font-family: $font-suisse-bold
           color: $magenta
           position: relative
@@ -415,6 +416,7 @@ body
       font-size: 14px
       line-height: 22px
       color: $white
+      margin: 0 20px 0 0
     &-info
       display: flex
       align-items: center
@@ -441,10 +443,6 @@ body
     font-family: $font-din
     font-size: 2.55vw
     color: #000
-    position: absolute
-    bottom: 0
-    left: 0
-    right: 0
     height: 75px
     justify-content: center
     align-items: center
