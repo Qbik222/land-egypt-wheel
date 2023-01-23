@@ -18,7 +18,7 @@ function musicOff() {
 audioWheel.volume = "0.3", musicBtn.addEventListener("click", function () {
     (musicBtn.classList.contains("on") ? musicOff : musicOn)()
 });
-var triesCounter = 0, textAfterRotate = "У тебе <span>1</span> спроби";
+var triesCounter = 0, textAfterRotate = "У тебе <span>1</span> спроба";
 
 function runFirstRotation() {
     wheel.classList.add("reel-rotation-first"), playBtn.classList.remove("pulse-btn"), playBtn.style.cursor = "default", wrapper.style.pointerEvents = "none", audioWheel.play(), setTimeout(function () {

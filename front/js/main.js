@@ -40,7 +40,7 @@ function musicOff(){
 }
 
 let triesCounter = 0
-let textAfterRotate = 'У тебе <span>1</span> спроби';
+let textAfterRotate = 'У тебе <span>1</span> спроба';
 
 playBtn.addEventListener('click', () => {
     if (triesCounter === 0) {
