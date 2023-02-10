@@ -122,7 +122,7 @@ body
       letter-spacing: 0.03em
       text-transform: uppercase
       color: #292929
-      margin: 0 0 10px 0
+      margin: 0 0 20px 0
     &-win
       font-family: $font-suisse-bold
       font-size: 48px
@@ -132,16 +132,28 @@ body
       color: $magenta
       margin: 0 0 15px 0
       position: relative
-      &::before
+      left: 19px
+      &::after
         content: '+'
         position: absolute
         font-family: $font-suisse-bold
         left: 15px
-        top: 45%
+        top: 72%
         transform: translateY(-50%)
         font-size: 48px
         line-height: 53px
         color: $magenta
+      &::before
+        content: 'до'
+        font-family: $font-suisse-bold
+        position: absolute
+        left: 5px
+        top: 28%
+        transform: translateY(-50%)
+        font-size: 28px
+        line-height: 33px
+        color: $magenta
+
     &-text
       font-family: $font-suisse-semb
       font-size: 14px
@@ -437,7 +449,6 @@ body
           margin: 0 10px 0 0
         &-google
           width: 127px
-
   &__legal
     //display: flex
     display: none
