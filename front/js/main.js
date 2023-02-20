@@ -9,35 +9,8 @@ const playBtn = document.querySelector('.bonus__main-wheel-btn'),
       popupSecond = document.querySelector('.bonus__secondWin'),
       overflow = document.querySelector('body'),
       wrapper = document.querySelector('.bonus'),
-      musicBtn = document.querySelector('.bonus__music'),
-      audio = document.querySelector('.audio'),
-      rotateText = document.querySelector('.bonus__main-txt-center'),
-      audioWheel = document.querySelector('.audio-wheel'),
-      audioWin = document.querySelector('.audio-coin')
+      rotateText = document.querySelector('.bonus__main-txt-center');
 
-audioWheel.volume = '0.3'
-
-musicBtn.addEventListener('click', ()=>{
-    if(musicBtn.classList.contains('on')){
-        musicOff()
-    } else {
-        musicOn()
-    }
-})
-
-function musicOn(){
-    musicBtn.classList.add('on')
-    musicBtn.querySelector('img').setAttribute('src', 'img/music-on.svg')
-    audio.play()
-
-}
-
-function musicOff(){
-    musicBtn.classList.remove('on')
-    musicBtn.querySelector('img').setAttribute('src', 'img/music-off.svg')
-    audio.pause()
-
-}
 
 let triesCounter = 0
 let textAfterRotate = 'У тебе <span>1</span> спроба';
@@ -45,9 +18,7 @@ let textAfterRotate = 'У тебе <span>1</span> спроба';
 playBtn.addEventListener('click', () => {
     if (triesCounter === 0) {
         runFirstRotation()
-        musicOn()
         rotateText.innerHTML = textAfterRotate;
-
     } else {
         runSecondRotation()
     }
@@ -58,7 +29,6 @@ function runFirstRotation() {
     playBtn.classList.remove('pulse-btn')
     playBtn.style.cursor = 'default'
     wrapper.style.pointerEvents = 'none'
-    audioWheel.play()
     setTimeout(() => {
         mainWheel.classList.add('_win')
     }, 6000)
@@ -86,7 +56,7 @@ function runSecondRotation() {
     playBtn.style.cursor = 'default'
     overflow.style.overflow = 'hidden'
     wrapper.style.pointerEvents = 'none'
-    audioWheel.play()
+
     setTimeout(() => {
         mainWheel.classList.add('_win')
     }, 6000)
@@ -112,7 +82,7 @@ popupFirstBtn.addEventListener('click', () => {
 function displayPopup(popup) {
     overlay.classList.remove('opacity-overlay')
     popup.classList.remove('hide')
-    audioWin.play()
+
 }
 
 
