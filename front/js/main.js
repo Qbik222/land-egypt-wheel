@@ -39,7 +39,7 @@ function runFirstRotation() {
 }
 
 function doAfterFirstRotation() {
-    wheel.style.transform = 'rotate(992deg)'
+    wheel.style.transform = 'rotate(900deg)'
     wheel.classList.remove('reel-rotation-first')
     displayPopup(popupFirst)
     wrapper.style.pointerEvents = 'auto'
