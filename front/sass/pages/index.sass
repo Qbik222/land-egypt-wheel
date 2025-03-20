@@ -12,12 +12,21 @@ $font-suisse-semb: SuisseIntl-SemiBold, sans-serif // 600 //
 
 $font-din: DINPro-CondLight, sans-serif
 
+.menu-test
+  position: fixed
+  z-index: 10
+  display: flex
+  flex-direction: column
+
+
 body
   -webkit-tap-highlight-color: rgba(0,0,0,0)
   overscroll-behavior: none
+  background: $blue
   img
     max-width: 100%
     height: auto
+
 
 .position
   position: absolute
@@ -34,11 +43,11 @@ body
   position: relative
   @media screen and (min-width: 700px) and (orientation: landscape) and (min-height: 451px)
     background: #005 url('../img/bg-desc.jpg') no-repeat 50% 0/cover
-  @media screen and (min-width: 601px) and (max-width: 1024px) and (orientation: portrait)
+  @media screen and (min-width: 601px) and (max-width: 1300px) and (orientation: portrait)
     background: #005  url('../img/bg-tab.jpg') no-repeat 50% 0/cover
   @media screen and (max-width: 600px) and (orientation: portrait)
     background: #005 url("../img/bg-mob.jpg") no-repeat 50% 0%/cover
-  @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
+  @media (max-width: 950px) and (orientation: landscape) and (max-height: 450px)
     background: #005 url("../img/bg-landscape.jpg") no-repeat 50% 0/cover
   &__overlay
     background: rgba(0, 0, 0, 0.7)
@@ -126,33 +135,45 @@ body
     &-win
       font-family: $font-suisse-bold
       font-size: 48px
-      line-height: 53px
+      line-height: 48px
       text-align: center
       letter-spacing: 0.02em
       color: $magenta
-      margin: 0 0 15px 0
+      margin: 0 0 5px 0
       position: relative
-      left: 19px
+      left: 0
+      display: inline-flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      &-item
+        font-family: inherit
+        font-size: inherit
+        &:nth-child(1)
+          order: 0
+          white-space: nowrap
+          &::before
+            content: 'до'
+            font-family: $font-suisse-bold
+            //position: absolute
+            //left: -30px
+            //top: 27%
+            //transform: translateY(-50%)
+            font-size: 28px
+            line-height: 33px
+            color: $magenta
+            margin-right: 4px
+        &:nth-child(2)
+          order: 2
       &::after
         content: '+'
-        position: absolute
         font-family: $font-suisse-bold
-        left: 9px
-        top: 72%
-        transform: translateY(-50%)
-        font-size: 48px
-        line-height: 53px
+        font-size: 32px
+        line-height: 25px
+        padding-bottom: 5px
         color: $magenta
-      &::before
-        content: 'до'
-        font-family: $font-suisse-bold
-        position: absolute
-        left: -9px
-        top: 29%
-        transform: translateY(-50%)
-        font-size: 28px
-        line-height: 33px
-        color: $magenta
+        order: 1
+        margin: -8px 5px -3px 0
 
     &-text
       font-family: $font-suisse-semb
@@ -233,8 +254,8 @@ body
           background: $green-hover
     &-logo
       background: url("../img/logo.svg") no-repeat 0 0/contain
-      width: 437px
-      height: 154px
+      width: 400px
+      height: 130px
       position: absolute
       top: 0
       left: 0
@@ -317,7 +338,7 @@ body
         content: ''
         position: absolute
         z-index: 3
-        background: url("../img/slice.svg") no-repeat 0 0/contain
+        background: url("../img/slice.png") no-repeat 0 0/contain
         width: 270px
         height: 320px
         top: 29px
@@ -336,13 +357,13 @@ body
         z-index: 5
         top: -167px
         cursor: pointer
-        @media screen and (min-width: 551px) and (orientation: landscape) and (min-height: 500px)
+        @media screen and (min-width: 601px) and (orientation: landscape) and (min-height: 500px)
           background: url("../img/wheel-btn.png") no-repeat 0 0/contain
-        @media screen and (min-width: 551px) and (max-width: 1024px) and (orientation: portrait)
+        @media screen and (min-width: 601px) and (max-width: 1300px) and (orientation: portrait)
           background: url("../img/wheel-btn.png") no-repeat 0 0/contain
-        @media screen and (max-width: 550px) and (orientation: portrait)
+        @media screen and (max-width: 600px) and (orientation: portrait)
           background: url("../img/wheel-btn-mob.png") no-repeat 0 0/contain
-        @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
+        @media (max-width: 950px) and (orientation: landscape) and (max-height: 450px)
           background: url("../img/wheel-btn-mob.png") no-repeat 0 0/contain
         &-bottom
           width: 500px
@@ -358,13 +379,13 @@ body
         position: relative
         margin: auto
         z-index: 2
-        @media screen and (min-width: 551px) and (orientation: landscape) and (min-height: 500px)
+        @media screen and (min-width: 601px) and (orientation: landscape) and (min-height: 500px)
           background: url("../img/wheel-frame.png") no-repeat 0 0/contain
-        @media screen and (min-width: 551px) and (max-width: 1024px) and (orientation: portrait)
+        @media screen and (min-width: 601px) and (max-width: 1300px) and (orientation: portrait)
           background: url("../img/wheel-frame.png") no-repeat 0 0/contain
-        @media screen and (max-width: 550px) and (orientation: portrait)
+        @media screen and (max-width: 600px) and (orientation: portrait)
           background: url("../img/wheel-frame-mob-2.png") no-repeat 0 0/contain
-        @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
+        @media (max-width: 950px) and (orientation: landscape) and (max-height: 450px)
           background: url("../img/wheel-frame-mob-2.png") no-repeat 0 0/contain
       &-reel
         width: 615px
@@ -372,13 +393,13 @@ body
         top: 38px
         bottom: auto
         z-index: 2
-        @media screen and (min-width: 551px) and (orientation: landscape) and (min-height: 500px)
+        @media screen and (min-width: 601px) and (orientation: landscape) and (min-height: 500px)
           background: url("../img/wheel-reel.png") no-repeat 0 0/contain
-        @media screen and (min-width: 551px) and (max-width: 1024px) and (orientation: portrait)
+        @media screen and (min-width: 601px) and (max-width: 1300px) and (orientation: portrait)
           background: url("../img/wheel-reel.png") no-repeat 0 0/contain
-        @media screen and (max-width: 550px) and (orientation: portrait)
+        @media screen and (max-width: 600px) and (orientation: portrait)
           background: url("../img/wheel-reel-mob-2.png") no-repeat 0 0/contain
-        @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
+        @media (max-width: 950px) and (orientation: landscape) and (max-height: 450px)
           background: url("../img/wheel-reel-mob-2.png") no-repeat 0 0/contain
 
       &-light
@@ -390,13 +411,13 @@ body
         top: -120px
         z-index: 1
         animation: 1.8s infinite lamps-light ease-in-out
-        @media screen and (min-width: 551px) and (orientation: landscape) and (min-height: 500px)
+        @media screen and (min-width: 601px) and (orientation: landscape) and (min-height: 500px)
           background: url("../img/wheel-light.svg") no-repeat 50% 50%/contain
-        @media screen and (min-width: 551px) and (max-width: 1024px) and (orientation: portrait)
+        @media screen and (min-width: 601px) and (max-width: 1300px) and (orientation: portrait)
           background: url("../img/wheel-light.svg") no-repeat 50% 50%/contain
-        @media screen and (max-width: 550px) and (orientation: portrait)
+        @media screen and (max-width: 600px) and (orientation: portrait)
           background: url("../img/wheel-light.svg") no-repeat 50% 50%/contain
-        @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
+        @media (max-width: 950px) and (orientation: landscape) and (max-height: 450px)
           background: url("../img/wheel-light.svg") no-repeat 50% 50%/contain
   &__music
     display: flex
@@ -456,7 +477,7 @@ body
     font-family: $font-din
     font-size: 2.55vw
     color: #000
-    height: 75px
+    height: fit-content
     justify-content: center
     align-items: center
     padding-top: 3px
