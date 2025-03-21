@@ -140,13 +140,3 @@ function displayPopup(popup) {
         }
     });
 })();
-
-
-document.querySelector(".first-popup").addEventListener("click", () =>{
-    displayPopup(popupFirst)
-})
-
-document.querySelector(".second-popup").addEventListener("click", () =>{
-    displayPopup(popupSecond)
-})
-
