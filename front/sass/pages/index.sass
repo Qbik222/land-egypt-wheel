@@ -12,6 +12,34 @@ $font-suisse-semb: SuisseIntl-SemiBold, sans-serif // 600 //
 
 $font-din: DINPro-CondLight, sans-serif
 
+//test
+.menu-btn
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 20
+  width: fit-content
+  background: white
+  padding: 3px
+
+.menu-test
+  position: fixed
+  left: 0
+  top: 25px
+  z-index: 20
+  display: flex
+  gap: 2px
+  flex-direction: column
+  & > button
+    width: fit-content
+    background: white
+    color: black
+    padding: 2px
+    font-family: inherit
+    border-radius: 2px
+
+
+
 body
   -webkit-tap-highlight-color: rgba(0,0,0,0)
   overscroll-behavior: none
@@ -530,7 +558,7 @@ body
   90%
     transform: rotate(894deg)
   100%
-    transform: rotate(900deg) //900
+    transform: rotate(899deg)
 
 .reel-rotation-second
   animation: 6s reel-rotation-second cubic-bezier(.25,.75,.5,1.05) forwards
@@ -543,7 +571,7 @@ body
   90%
     transform: rotate(1840deg)
   100%
-    transform: rotate(1846deg)
+    transform: rotate(1845deg)
 
 .hide
   display: none

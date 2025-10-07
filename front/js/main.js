@@ -39,7 +39,7 @@ function runFirstRotation() {
 }
 
 function doAfterFirstRotation() {
-    wheel.style.transform = 'rotate(900deg)'
+    wheel.style.transform = 'rotate(899deg)'
     wheel.classList.remove('reel-rotation-first')
     displayPopup(popupFirst)
     wrapper.style.pointerEvents = 'auto'
@@ -84,6 +84,21 @@ function displayPopup(popup) {
     popup.classList.remove('hide')
 
 }
+
+
+document.querySelector(".menu-btn").addEventListener('click', () => {
+    document.querySelector(".menu-test").classList.toggle('hide')
+})
+
+document.querySelector(".popup1").addEventListener('click', () => {
+    popupSecond.classList.add('hide')
+    displayPopup(popupFirst)
+})
+
+document.querySelector(".popup2").addEventListener('click', () => {
+    popupFirst.classList.add('hide')
+    displayPopup(popupSecond)
+})
 
 
 (function () {
