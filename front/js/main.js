@@ -88,20 +88,20 @@ function displayPopup(popup) {
 
 }
 
-
-document.querySelector(".menu-btn").addEventListener('click', () => {
-    document.querySelector(".menu-test").classList.toggle('hide')
-})
-
-document.querySelector(".popup1").addEventListener('click', () => {
-    popupSecond.classList.add('hide')
-    displayPopup(popupFirst)
-})
-
-document.querySelector(".popup2").addEventListener('click', () => {
-    popupFirst.classList.add('hide')
-    displayPopup(popupSecond)
-})
+//
+// document.querySelector(".menu-btn").addEventListener('click', () => {
+//     document.querySelector(".menu-test").classList.toggle('hide')
+// })
+//
+// document.querySelector(".popup1").addEventListener('click', () => {
+//     popupSecond.classList.add('hide')
+//     displayPopup(popupFirst)
+// })
+//
+// document.querySelector(".popup2").addEventListener('click', () => {
+//     popupFirst.classList.add('hide')
+//     displayPopup(popupSecond)
+// })
 
 
 (function () {
