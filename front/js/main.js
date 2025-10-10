@@ -29,6 +29,7 @@ function runFirstRotation() {
     playBtn.classList.remove('pulse-btn')
     playBtn.style.cursor = 'default'
     wrapper.style.pointerEvents = 'none'
+    document.body.style.overflow = 'hidden'
     setTimeout(() => {
         mainWheel.classList.add('_win')
     }, 6000)
@@ -82,6 +83,8 @@ popupFirstBtn.addEventListener('click', () => {
 function displayPopup(popup) {
     overlay.classList.remove('opacity-overlay')
     popup.classList.remove('hide')
+    document.body.style.overflow = 'hidden'
+    console.log(popup)
 
 }
 
